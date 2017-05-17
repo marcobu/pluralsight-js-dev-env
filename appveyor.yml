@@ -1,14 +1,19 @@
+# Notes:
+#   - Minimal appveyor.yml file is an empty file. All sections are optional.
+#   - Indent each level of configuration with 2 spaces. Do not use tabs!
+#   - All section names are case-sensitive.
+#   - Section names should be unique on each level.
 environment:
-	matrix:
-	-nodejs_version: "6"
-	
+  matrix:
+  -nodejs_version: "6"
+  
 install:
-	- ps: Install-Product node $env:nodejs_version
-	- npm install
+  - ps: Install-Product node $env:nodejs_version
+  - npm install
 
 test_script:
-	- node --version
-	- npm --version
-	- npm test
-	
+  - node --version
+  - npm --version
+  - npm test
+  
 build: off
